@@ -13,7 +13,7 @@ class ContatoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,43 @@ class ContatoRequest extends FormRequest
      */
     public function rules()
     {
+        switch($this->method()){
+            case "POST": //CRIAÇÃO DE NOVO REGISTRO
+                return [
+                    'saudacao' => 'required|max:5',
+                    'nome' => 'required|max:100',
+                    'telefone' => 'required|max:15',
+                    'email' => 'email|max:200|unique:contatos',
+                    'data_nascimento' => 'date_format:"d/m/Y"',
+                    'avatar' => 'nullable|sometimes|image|mimes:jpg,jpeg,png,gif'
+                ];
+                break;
+
+            case "PUT": //ATUALIZAÇÃO DE REGISTRO EXISTENTE
+                return[
+                    'saudacao' => 'required|max:5',
+                    'nome' => 'required|max:100',
+                    'telefone' => 'required|max:15',
+                    'email' => 'email|max:200|unique:contatos, email,'.$this->id,
+                    'data_nascimento' => 'date_format:"d/m/y"',
+                    'avatar' => 'nullable|sometimes|image|mimes:jpg,jpeg,png,gif'
+                ];
+                break;
+
+            default:break;
+        }
         return [
             //
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'saudacao.required' => 'O campo Saudação é obrigatório',
+            'nome.required' => 'Preencha o nome corretamente',
+            'email.email' => 'Informe um e-mail válido',
+            'data_nascimento.date_format' => 'O campo da data deve ser no formato DD/MM/AAAA'
         ];
     }
 }
