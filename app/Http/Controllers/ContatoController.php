@@ -15,8 +15,8 @@ class ContatoController extends Controller
      */
     public function index()
     {
-        $contatos = Contato::all()->sortBy('nome');
-        return view('contato.index', compact('contatos'));
+        $contato = Contato::all()->sortBy('nome');
+        return view('contato.index', compact('contato'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ContatoController extends Controller
     public function store(Request $request)
     {
         $contato = Contato::create($request->all());
-        return redirect('contatos');
+        return redirect('contato');
     }
 
     /**
@@ -77,7 +77,7 @@ class ContatoController extends Controller
         $contato = Contato::find($id);
         $contato->fill($request->all());
         $contato->update();
-        return redirect('contatos');
+        return redirect('contato');
     }
 
     /**
@@ -89,6 +89,6 @@ class ContatoController extends Controller
     public function destroy($id)
     {
         Contato::destroy($id);
-        return redirect('contatos');
+        return redirect('contato');
     }
 }

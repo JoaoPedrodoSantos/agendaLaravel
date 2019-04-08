@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Contato</div>
-                <form action="{{ url('contatos') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('contato') }}" method="post" enctype="multipart/form-data">
                     <div class="card-body">
                         {{ csrf_field() }}
 

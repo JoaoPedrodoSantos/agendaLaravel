@@ -28,7 +28,7 @@ function validate_delete() {
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Contato</div>
-                <form action="{{ url('contatos/'.$data->id) }}" method="post" onsubmit="return validate_delete()">
+                <form action="{{ url('contato/'.$data->id) }}" method="post" onsubmit="return validate_delete()">
                     <div class="card-body">
                         @method('DELETE')
 
@@ -69,7 +69,7 @@ function validate_delete() {
                     <div class="card-footer text-right">
                         <a href="#" onclick="history.back()" class="btn btn-secondary">Voltar</a>
                         <button type="submit" class="btn btn-danger">Excluir</button>
-                        <a href="{{ url('contatos/edit/'.$data->id) }}" class="btn btn-primary">Editar</a>
+                        <a href="{{ url('contato/edit/'.$data->id) }}" class="btn btn-primary">Editar</a>
                     </div>
                 </form>
             </div>
