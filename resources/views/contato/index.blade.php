@@ -1,29 +1,27 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
-@section('stylecss')
+@section('css')
 <style media="screen">
     .img-avatar-xs {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
         border: 1px solid #c0c0c0;
         border-radius: 5px;
     }
     .a-line {
         line-height: 30px;
     }
-</style>
-
-@endsection
+</style>    
+@stop
 
 @section('content')
 
-<div class="container">
-    <div class="card">
-        <div class="card-header">
+    <div class="box">
+        <div class="box-header">
             Contatos
             <a href="{{ url('contato/add') }}" class="btn btn-primary btn-sm float-right">Novo</a>
         </div>
-        <div class="card-body p-0">
+        <div class="box-body p-0">
             <div class="table-responsive border-0">
                 <table class="table table-hover" style="margin-bottom: inherit">
                     <tbody>
@@ -44,6 +42,5 @@
             </div>
         </div>
     </div>
-</div>
 
 @endsection
