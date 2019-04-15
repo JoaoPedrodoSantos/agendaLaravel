@@ -1,17 +1,14 @@
 @extends('adminlte::page')
 
-@section('css')
-@stop
-
 @section('content')
-<div class="box box-warning">
-        <div class="box-header with-border">
+<div class="box">
+        <div class="box-header with-border bg-yellow">
           <h3 class="box-title">Preencha os dados</h3>
         </div>
         <form action="{{ url('contato') }}" method="post" enctype="multipart/form-data">
         
         <div class="box-body">
-            {{ csrf_field() }}
+            {{ csrf_field() }} <!-- Para garantir a segurança do formulário-->
           
             <div class="input-group">
                 <label for="saudacao">Saudação</label>
@@ -74,8 +71,8 @@
 
         <div class="input-group input-group-sm">
             <span class="input-group-btn">
-                <a href="#" onclick="history.back()" class="btn btn-default">Voltar</a>
-                <button type="submit" class="btn btn-primary pull-right">Salvar</button>
+              <a href="#" onclick="history.back()" class="btn btn-default"><i class="fa fa-fw fa-angle-left"></i> Voltar</a>
+              <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Salvar</button>
             </span>
         </div><!-- /input-group -->          
       </div><!-- /.box-body -->

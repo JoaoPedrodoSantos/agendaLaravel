@@ -36,4 +36,8 @@ class Contato extends Model
         }
         $this->attributes['avatar'] = str_replace('public', 'storage', $filepath) . $filename;
     }
+
+    public static function indexLetra($letra){
+        return static::where('nome', 'LIKE', $letra . '%')->get();
+    }
 }

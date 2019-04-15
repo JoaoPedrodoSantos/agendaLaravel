@@ -13,10 +13,18 @@ class ContatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($letra)
     {
+        $contato = Contato::indexLetra($letra)->sortBy('nome');
+        return view('contato.index', [
+            'contato' => $contato,
+            'criterio' => $letra
+        ]);
+    }
+
+    public function lista(){
         $contato = Contato::all()->sortBy('nome');
-        return view('contato.index', compact('contato'));
+        return view('contato.lista', compact('contato'),  compact('criterio'));
     }
 
     /**
@@ -35,7 +43,7 @@ class ContatoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request)//armazena no banco passando pelo request
     {
         $contato = Contato::create($request->all());
         return redirect('contato');
@@ -49,8 +57,8 @@ class ContatoController extends Controller
      */
     public function show($id)
     {
-        $contato = Contato::find($id);
-        return view('contato.show', ['data' =>$contato]);
+        $contato = Contato::find($id); //Acha o contato pela id
+        return view('contato.show', ['data' =>$contato]); //Coloca na váriavel data e mostra
     }
 
     /**
@@ -74,7 +82,7 @@ class ContatoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $contato = Contato::find($id);
+        $contato = Contato::find($id);  //Pega o contato editado e coloca no banco as edições
         $contato->fill($request->all());
         $contato->update();
         return redirect('contato');

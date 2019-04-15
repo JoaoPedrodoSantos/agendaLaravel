@@ -1,13 +1,11 @@
 @extends('adminlte::page')
 
 
-@section('css')
-
-@stop
-
 @section('content')
     <div class="box box-warning">
-        <div class="box-header">Edite </div>
+        <div class="box-header text-center">
+            Edite os Dados 
+        </div>
             <form action="{{ url('contato/'.$data->id) }}" method="post" enctype="multipart/form-data">
                 <div class="box-body">
                     @method('PUT')
@@ -37,13 +35,13 @@
                             <div class="input-group-addon">
                                     <i class="fa fa-phone"></i>
                             </div>
-                                <input type="text" required class="form-control{{$errors->has('telefone') ? ' is-invalid':''}}" value="{{ old('telefone') }}" id="telefone" name="telefone" placeholder="(99)99999-9999">
+                                <input type="text" required class="form-control{{$errors->has('telefone') ? ' is-invalid':''}}" value="{{ old('telefone', $data->telefone) }}" id="telefone" name="telefone" placeholder="(99)99999-9999">
                                 <div class="invalid-feedback">{{ $errors->first('telefone') }}</div>
                         </div>
                         <br>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input type="email" class="form-control{{$errors->has('email') ? ' is-invalid':''}}" value="{{ old('email') }}" id="email" name="email" placeholder="email@provedor.com.br">
+                            <input type="email" class="form-control{{$errors->has('email') ? ' is-invalid':''}}" value="{{ old('email', $data->email) }}" id="email" name="email" placeholder="email@provedor.com.br">
                             <div class="invalid-feedback">{{ $errors->first('email') }}</div>
                         </div>
                         <br>
@@ -64,17 +62,17 @@
                         <br>
                         <div class="form-group">
                             <label for="nota">Nota</label>
-                            <textarea class="form-control" id="nota" name="nota" rows="2">{{ old('nota') }}</textarea>
+                            <textarea class="form-control" id="nota" name="nota" rows="2">{{ old('nota', $data->nota) }}</textarea>
                         </div>
-                    <br>
-                    </div>
-                    <div class="input-group input-group-sm">
-                        <span class="input-group-btn">
-                            <a href="#" onclick="history.back()" class="btn btn-default">Voltar</a>
-                            <button type="submit" class="btn btn-primary pull-right">Salvar</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
+                        <br>
+                   
+                    
+                        <div class="box-footer ">
+                            <a href="#" onclick="history.back()" class="btn btn-default"><i class="fa fa-fw fa-angle-left"></i> Voltar</a>
+                            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-fw fa-save"></i> Salvar</button>
+                        </div>
+                </div>
+            </form> 
+    </div>
 
 @endsection

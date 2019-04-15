@@ -19,19 +19,12 @@
     <div class="box">
         <div class="box-header text-center bg-purple">
           <h3 class="box-title">Todos os Contatos</h3>
+
             <a href="{{ url('contato/add') }}" class="btn btn-primary pull-right">Novo Contato <i class="fa  fa-user-plus"></i></a>
         </div>
         <div class="box-body">
                 <table class="table" style="margin-bottom: inherit">
                     <tbody>
-                        <div class="col-sm-12">
-                        @foreach(range('A', 'Z') as $letra)
-                            <div class="btn-group">
-                            <a href="{{url('contato/' . $letra)}}" class="btn bg-purple {{$letra === $criterio ? 'disabled' : ''}} ">{{$letra}}</a>
-                            </div>
-                        @endforeach
-                        </div>
-                    <h1>Letra: {{$criterio}}</h1>
                         @foreach ($contato as $contato)
                         <tr>
                        

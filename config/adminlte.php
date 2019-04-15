@@ -110,19 +110,32 @@ return [
     'menu' => [
         [
             'text' => 'Perfil',
-            'url'  => 'admin/settings',
+            'url'  => 'profile',
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'text' => 'Todos os Contatos',
+            'url' => 'contato/lista',
+            'icon' => 'list',
+            'icon_color' => 'yellow',
         ],
         [
-            'text'       => 'Favoritos',
+            'text' => 'Filtrar Por Letra',
             'url' => 'contato',
-            'icon' => 'star',
-            'icon_color' => 'yellow',
+            'icon' => 'filter',
+            'icon_color' => 'purple',
+        ],
+        [
+        'text'       => 'Adicionar Contato',
+        'url' => 'contato/add',
+        'icon' => 'user-plus',
+        'icon_color' => 'blue',
+        ],
+        [
+        'text'       => 'Repositório',
+        'url' => 'https://github.com/JoaoPedrodoSantos/agendaLaravel',
+        'icon' => 'github',
+        'icon_color' => 'white',
         ],
     ],
 

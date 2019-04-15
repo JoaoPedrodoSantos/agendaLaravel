@@ -7,8 +7,8 @@ $factory->define(App\Contato::class, function (Faker $faker) {
         'saudacao' => 'Sr.',
         'nome' => $faker->name,
         'telefone' => '(42)5555-5555',
-        'data_nascimento' => $faker->date('Y-m-d'),
         'email' => $faker->unique()->safeEmail,
-        'nota' => 'Usúario criado usando o método factory e classe faker'
+        'nota' => 'Usúario criado usando o método factory e classe faker',
+        'favorito' => false,
     ];
 });

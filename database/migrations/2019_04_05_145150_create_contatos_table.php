@@ -22,6 +22,7 @@ class CreateContatosTable extends Migration
             $table->date('data_nascimento')->nullable();
             $table->string('avatar', 200)->nullable();
             $table->text('nota')->nullable();
+            $table->boolean('favorito')->nullable();
             $table->timestamps();
         });
     }
