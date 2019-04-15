@@ -7,8 +7,8 @@ Além do gerenciamento de usuários podendo mudar o e-mail, senha, nome e imagem
 
 Projeto de agenda realizado com o auxílio do código do framework AdminLTE e seguintes cursos on-line:  
 
-AdminLTE https://github.com/jeroennoten/Laravel-AdminLTE  
-Especializati https://github.com/especializati/curso-laravel-55-gratis  
-OpenWebGreen https://github.com/OpenWebGreen/agenda  
-angelitocsg https://github.com/angelitocsg/laravel-agenda-contatos  
+AdminLTE: https://github.com/jeroennoten/Laravel-AdminLTE  
+Especializati: https://github.com/especializati/curso-laravel-55-gratis  
+OpenWebGreen: https://github.com/OpenWebGreen/agenda  
+angelitocsg: https://github.com/angelitocsg/laravel-agenda-contatos  
 
