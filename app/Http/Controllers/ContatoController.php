@@ -46,7 +46,7 @@ class ContatoController extends Controller
     public function store(Request $request)//armazena no banco passando pelo request
     {
         $contato = Contato::create($request->all());
-        return redirect('contato');
+        return redirect('contato/lista');
     }
 
     /**
@@ -85,7 +85,7 @@ class ContatoController extends Controller
         $contato = Contato::find($id);  //Pega o contato editado e coloca no banco as edições
         $contato->fill($request->all());
         $contato->update();
-        return redirect('contato');
+        return redirect('contato/lista');
     }
 
     /**

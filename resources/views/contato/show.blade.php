@@ -61,7 +61,7 @@ a:last-of-type{
 
                         <div class="box-footer ">
                             <a href="#" onclick="history.back()" class="btn btn-default"><i class="fa fa-fw fa-angle-left"></i> Voltar</a>
-                            <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-fw fa-trash-o"></i> Excluir</button>
+                            <button type="submit" class="btn btn-danger pull-right"><i class="fa fa-fw fa-trash-o"></i> <a href="{{ url('contato/lista') }}" style="color: white">Excluir</a></button>
                             <a href="{{ url('contato/edit/'.$data->id) }}" class="btn btn-primary pull-right"><i class="fa fa-fw fa-edit"></i> Editar</a>
                         </div>
             </div>

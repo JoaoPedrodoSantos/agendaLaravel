@@ -5,7 +5,7 @@
         <div class="box-header with-border bg-yellow">
           <h3 class="box-title">Preencha os dados</h3>
         </div>
-        <form action="{{ url('contato') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('contato/lista') }}" method="post" enctype="multipart/form-data">
         
         <div class="box-body">
             {{ csrf_field() }} <!-- Para garantir a segurança do formulário-->
